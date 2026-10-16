@@ -1,0 +1,72 @@
+Algorithm,PID,Arrival,Burst,WaitTime,TurnaroundTime,ResponseTime
+Strict Priority,Victim_Batch,0,50,140,190,0
+Strict Priority,HighPrio_1,5,10,0,10,0
+Strict Priority,HighPrio_2,10,10,5,15,5
+Strict Priority,HighPrio_3,15,10,10,20,10
+Strict Priority,HighPrio_4,20,10,15,25,15
+Strict Priority,HighPrio_5,25,10,20,30,20
+Strict Priority,HighPrio_6,30,10,25,35,25
+Strict Priority,HighPrio_7,35,10,30,40,30
+Strict Priority,HighPrio_8,40,10,35,45,35
+Strict Priority,HighPrio_9,45,10,40,50,40
+Strict Priority,HighPrio_10,50,10,45,55,45
+Strict Priority,HighPrio_11,55,10,50,60,50
+Strict Priority,HighPrio_12,60,10,55,65,55
+Strict Priority,HighPrio_13,65,10,60,70,60
+Strict Priority,HighPrio_14,70,10,65,75,65
+SUMMARY,Strict Priority,MaxWait:140,AvgTurnaround:52.33,AvgResponse:30.33,CS:15,Jains:0.5889
+
+Algorithm,PID,Arrival,Burst,WaitTime,TurnaroundTime,ResponseTime
+Standard Linear Aging,Victim_Batch,0,50,140,190,0
+Standard Linear Aging,HighPrio_1,5,10,4,14,0
+Standard Linear Aging,HighPrio_2,10,10,9,19,1
+Standard Linear Aging,HighPrio_3,15,10,14,24,6
+Standard Linear Aging,HighPrio_4,20,10,19,29,11
+Standard Linear Aging,HighPrio_5,25,10,24,34,16
+Standard Linear Aging,HighPrio_6,30,10,29,39,21
+Standard Linear Aging,HighPrio_7,35,10,39,49,26
+Standard Linear Aging,HighPrio_8,40,10,49,59,32
+Standard Linear Aging,HighPrio_9,45,10,59,69,42
+Standard Linear Aging,HighPrio_10,50,10,69,79,52
+Standard Linear Aging,HighPrio_11,55,10,79,89,62
+Standard Linear Aging,HighPrio_12,60,10,89,99,72
+Standard Linear Aging,HighPrio_13,65,10,99,109,82
+Standard Linear Aging,HighPrio_14,70,10,105,115,92
+SUMMARY,Standard Linear Aging,MaxWait:140,AvgTurnaround:67.80,AvgResponse:34.33,CS:171,Jains:0.6625
+
+Algorithm,PID,Arrival,Burst,WaitTime,TurnaroundTime,ResponseTime
+Baseline Burst-Ratio Aging,Victim_Batch,0,50,140,190,0
+Baseline Burst-Ratio Aging,HighPrio_1,5,10,4,14,0
+Baseline Burst-Ratio Aging,HighPrio_2,10,10,9,19,1
+Baseline Burst-Ratio Aging,HighPrio_3,15,10,14,24,6
+Baseline Burst-Ratio Aging,HighPrio_4,20,10,19,29,11
+Baseline Burst-Ratio Aging,HighPrio_5,25,10,24,34,16
+Baseline Burst-Ratio Aging,HighPrio_6,30,10,29,39,21
+Baseline Burst-Ratio Aging,HighPrio_7,35,10,34,44,26
+Baseline Burst-Ratio Aging,HighPrio_8,40,10,39,49,31
+Baseline Burst-Ratio Aging,HighPrio_9,45,10,44,54,36
+Baseline Burst-Ratio Aging,HighPrio_10,50,10,49,59,41
+Baseline Burst-Ratio Aging,HighPrio_11,55,10,54,64,46
+Baseline Burst-Ratio Aging,HighPrio_12,60,10,59,69,51
+Baseline Burst-Ratio Aging,HighPrio_13,65,10,64,74,56
+Baseline Burst-Ratio Aging,HighPrio_14,70,10,65,75,61
+SUMMARY,Baseline Burst-Ratio Aging,MaxWait:140,AvgTurnaround:55.80,AvgResponse:26.87,CS:119,Jains:0.6430
+
+Algorithm,PID,Arrival,Burst,WaitTime,TurnaroundTime,ResponseTime
+Multi-Novelty Adaptive Engine,Victim_Batch,0,50,140,190,0
+Multi-Novelty Adaptive Engine,HighPrio_1,5,10,1,11,0
+Multi-Novelty Adaptive Engine,HighPrio_2,10,10,5,15,1
+Multi-Novelty Adaptive Engine,HighPrio_3,15,10,10,20,10
+Multi-Novelty Adaptive Engine,HighPrio_4,20,10,15,25,15
+Multi-Novelty Adaptive Engine,HighPrio_5,25,10,20,30,20
+Multi-Novelty Adaptive Engine,HighPrio_6,30,10,25,35,25
+Multi-Novelty Adaptive Engine,HighPrio_7,35,10,30,40,30
+Multi-Novelty Adaptive Engine,HighPrio_8,40,10,35,45,35
+Multi-Novelty Adaptive Engine,HighPrio_9,45,10,40,50,40
+Multi-Novelty Adaptive Engine,HighPrio_10,50,10,45,55,45
+Multi-Novelty Adaptive Engine,HighPrio_11,55,10,50,60,50
+Multi-Novelty Adaptive Engine,HighPrio_12,60,10,55,65,55
+Multi-Novelty Adaptive Engine,HighPrio_13,65,10,60,70,60
+Multi-Novelty Adaptive Engine,HighPrio_14,70,10,65,75,65
+SUMMARY,Multi-Novelty Adaptive Engine,MaxWait:140,AvgTurnaround:52.40,AvgResponse:30.07,CS:17,Jains:0.5909
+

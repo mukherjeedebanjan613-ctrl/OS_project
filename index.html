@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burst-Proportional Dynamic Aging Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <span class="badge">Research Prototype</span>
+                <h1>Mitigating Starvation & Latency Degradation</h1>
+                <p class="subtitle">Burst-Proportional Dynamic Aging in Priority CPU Scheduling</p>
+            </div>
+            <div class="team-meta">
+                <span>Priyanshu Anand (24BCT0172)</span>
+                <span>Swapneel Dash (24BCE0622)</span>
+                <span>Debanjan Mukherjee (24BCT0115)</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-body">
+        
+        <section class="panel control-panel">
+            <div class="control-group">
+                <label for="workloadSelect">Workload Pattern</label>
+                <select id="workloadSelect">
+                    <option value="baseline">Baseline (Victim + High-Prio Stream)</option>
+                    <option value="random">Randomized Synthetic Workload</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="engineModeSelect">Engine Mode</label>
+                <select id="engineModeSelect">
+                    <option value="proposed">Baseline Proposed Ratio Aging</option>
+                    <option value="adaptive" selected>Multi-Novelty Adaptive Engine</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="alphaInput">Base Growth Rate (&alpha;<sub>0</sub>)</label>
+                <input type="number" id="alphaInput" value="3.0" step="0.5" min="0.5" max="10.0">
+            </div>
+
+            <div class="control-group">
+                <label for="linearKInput">Linear Aging Factor (k)</label>
+                <input type="number" id="linearKInput" value="0.2" step="0.05" min="0.05" max="1.0">
+            </div>
+
+            <div class="control-actions">
+                <button id="runBtn" class="btn btn-primary">Run Simulation</button>
+                <button id="exportBtn" class="btn btn-secondary">Export CSV</button>
+            </div>
+        </section>
+
+        
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <span class="kpi-label">Strict Max Wait</span>
+                <div class="kpi-value warning" id="strictWaitVal">-</div>
+                <span class="kpi-sub">Indefinite starvation</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">Linear Avg Turnaround</span>
+                <div class="kpi-value" id="linearTurnVal">-</div>
+                <span class="kpi-sub">Head-of-line blocking</span>
+            </div>
+            <div class="kpi-card highlight">
+                <span class="kpi-label">Selected Engine Max Wait</span>
+                <div class="kpi-value success" id="proposedWaitVal">-</div>
+                <span class="kpi-sub">Starvation resolved</span>
+            </div>
+            <div class="kpi-card highlight">
+                <span class="kpi-label">Selected Engine Jain's Index</span>
+                <div class="kpi-value success" id="proposedJainVal">-</div>
+                <span class="kpi-sub">Optimal resource equity</span>
+            </div>
+        </section>
+
+        
+        <section class="panel">
+            <div class="panel-header">
+                <h2>CPU Execution Timeline (Gantt Chart Trace in ms)</h2>
+            </div>
+            <div class="gantt-section">
+                <div class="gantt-title" id="ganttTitle">Selected Algorithm Execution Flow</div>
+                <div class="gantt-container" id="ganttTimeline"></div>
+            </div>
+        </section>
+
+        
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Quantitative Evaluation Metrics</h2>
+            </div>
+            <div class="table-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Scheduler Algorithm</th>
+                            <th>Max Wait Time ($W_{max}$)</th>
+                            <th>Avg Turnaround ($\overline{T}$)</th>
+                            <th>Avg Response Time</th>
+                            <th>Context Switches</th>
+                            <th>Jain's Fairness Index</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        <section class="analytics-grid">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Wait Time & Turnaround Trade-off (ms)</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Alpha (&alpha;) Sensitivity Analysis</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="alphaChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
